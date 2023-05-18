@@ -5,9 +5,10 @@ import GoogleImg from "../assets/search.png";
 import FacebookLogo from "../assets/fbLogo.png";
 import MainImg from "../assets/mainImg.png";
 import toast, { Toaster } from "react-hot-toast";
+import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
 import axios from "axios";
 // eslint-disable-next-line react/prop-types
-const Login = ({ show, showReg }) => {
+const Login = ({ show, showReg, showPassword, handleShowPassword }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const handleSubmit = () => {
@@ -65,13 +66,26 @@ const Login = ({ show, showReg }) => {
                         />
                       </div>
                       <div className="mb-3">
-                        <input
-                          type="password"
-                          className="form-control col-mid-12 py-3"
-                          placeholder="Password"
-                          value={password}
-                          onChange={(e) => setPassword(e.target.value)}
-                        />
+                        <div className="position-relative">
+                          <input
+                            type={showPassword ? "text" : "password"}
+                            className="form-control col-mid-12 py-3"
+                            placeholder="Password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                          />
+                          {showPassword ? (
+                            <AiOutlineEyeInvisible
+                              className="eye position-absolute top-50 end-0 translate-middle-y"
+                              onClick={handleShowPassword}
+                            />
+                          ) : (
+                            <AiOutlineEye
+                              className="eye position-absolute top-50 end-0 translate-middle-y"
+                              onClick={handleShowPassword}
+                            />
+                          )}
+                        </div>
                       </div>
                       <div className="d-flex justify-content-between align-items-center">
                         <button

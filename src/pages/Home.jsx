@@ -24,11 +24,13 @@ import Group from "../components/Group";
 import { recGroup } from "../utils/contant";
 import Login from "./Login1";
 import Register from "./Register1";
+
 function Home() {
   const [user, setUser] = useState();
   const [showModal, setShowModal] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
   const [select, setSelect] = useState(1);
+  const [showPassword, setShowPassword] = useState(false);
   const showRegisterModal = () => {
     setShowLogin(false);
   };
@@ -42,6 +44,9 @@ function Home() {
   };
   const toggleModal = () => {
     setShowModal(!showModal);
+  };
+  const handleShowPassword = () => {
+    setShowPassword(!showPassword);
   };
   return (
     <div className="container-fluid">
@@ -240,9 +245,21 @@ function Home() {
       </div>
       {showModal ? (
         showLogin ? (
-          <Login show={toggleModal} showReg={showRegisterModal} />
+          <Login
+            showPassword={showPassword}
+            setShowPassword={setShowPassword}
+            show={toggleModal}
+            showReg={showRegisterModal}
+            handleShowPassword={handleShowPassword}
+          />
         ) : (
-          <Register show={toggleModal} showLg={showLoginModal} />
+          <Register
+            showPassword={showPassword}
+            handleShowPassword={handleShowPassword}
+            setShowPassword={setShowPassword}
+            show={toggleModal}
+            showLg={showLoginModal}
+          />
         )
       ) : null}
     </div>

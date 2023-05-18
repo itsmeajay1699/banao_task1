@@ -8,13 +8,13 @@ import toast, { Toaster } from "react-hot-toast";
 import axios from "axios";
 import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
 // eslint-disable-next-line react/prop-types
-const Register = ({ show, showLg }) => {
+const Register = ({ show, showLg, showPassword, handleShowPassword }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [firstName, setfirstName] = useState("");
   const [lastName, setlastName] = useState("");
   const [confirmPassword, setconfirmPassword] = useState("");
-  const [showPassword, setShowPassword] = useState(false);
+
   //  //http://localhost:3000/api/v1/auth/register
   const handleSubmit = () => {
     if (password === confirmPassword) {
@@ -42,9 +42,7 @@ const Register = ({ show, showLg }) => {
       toast.error("Password not matched");
     }
   };
-  const handleShowPassword = () => {
-    setShowPassword(!showPassword);
-  };
+
   return (
     <div className="modal-overlay">
       <Toaster />
