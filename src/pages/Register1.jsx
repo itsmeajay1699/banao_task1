@@ -54,7 +54,7 @@ const Register = ({ show, showLg }) => {
                   Already have an account?{" "}
                   <span
                     onClick={showLg}
-                    className="text-primary cursor-pointer"
+                    className="text-primary bot"
                   >
                     Sign In
                   </span>

@@ -39,7 +39,7 @@ const Login = ({ show, showReg }) => {
                 <div className="d-none d-md-block">
                   {/*eslint-disable-next-line react/no-unescaped-entities */}
                   Don't have an account?{" "}
-                  <span onClick={showReg} className="text-primary">
+                  <span onClick={showReg} className="bot text-primary">
                     Sign Up
                   </span>
                 </div>
