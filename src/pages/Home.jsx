@@ -50,7 +50,7 @@ function Home() {
       <div className="container-fluid">
         <div className="row">
           <div className="col-12 col-md-10 offset-md-1 col-lg-9 mx-auto">
-            <div className="d-flex justify-content">
+            <div className="d-flex justify-content-between">
               <div className="d-flex  gap-4 mt-4 d-block d-md-none justify-content-between w-100">
                 <h5>Posts(368)</h5>
                 <DropdownButton />
