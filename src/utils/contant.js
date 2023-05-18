@@ -1,7 +1,7 @@
-import P1 from "../assets/P1.png";
-import P2 from "../assets/P2.png";
-import P3 from "../assets/P3.png";
-import P4 from "../assets/P4.png";
+import P1 from "../assets/firstLogo.png";
+import P2 from "../assets/secondLogo.png";
+import P3 from "../assets/thirdLogo.png";
+import P4 from "../assets/fourthLogo.png";
 
 export const recGroup = [
   {
