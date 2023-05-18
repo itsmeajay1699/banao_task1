@@ -1,0 +1,278 @@
+@import url("https://fonts.googleapis.com/css2?family=Aleo:ital@0;1&family=Poppins:ital@1&display=swap");
+
+:root {
+  --font-primary: "cursive";
+  --transition: all 0.3s linear;
+  --spacing: 0.25rem;
+  --radius: 0.5rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --max-width: 1170px;
+  --fixed-width: 620px;
+}
+/*
+  =============== 
+  Global Styles
+  ===============
+  */
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: var(--font-primary);
+  background: var(--clr-grey-10);
+  color: var(--clr-grey-1);
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+img:not(.logo) {
+  width: 100%;
+}
+img {
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: var(--spacing);
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+  font-family: var(--ff-primary);
+}
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.25rem;
+}
+h4 {
+  font-size: 0.875rem;
+}
+p {
+  margin-bottom: 1.25rem;
+  color: var(--clr-grey-5);
+}
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 1.75rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  body {
+    font-size: 1rem;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1;
+  }
+}
+
+/* picture tag */
+.abs {
+  left: 50px;
+}
+.sub-title {
+  font-size: 0.8rem;
+  color: #fff;
+  font-weight: 400;
+}
+
+.join-btn {
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+}
+.logo {
+  width: 150px;
+}
+.ing-fluid {
+  width: 100%;
+  height: 100%;
+}
+
+.input-container {
+  border: 1px solid black;
+  align-items: center;
+  border-radius: 30px;
+  padding: 0 20px;
+}
+.dropdown-icon {
+  width: 15px;
+  margin-left: 5px;
+  color: black;
+}
+.free-text {
+  color: #8fb0f1;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.second-col {
+  left: 15%;
+  bottom: 10%;
+  z-index: 999;
+}
+
+.google-logo {
+  max-width: 20px;
+  height: 20px;
+  margin-right: 20px;
+}
+
+.button-create {
+  background-color: black;
+  color: #fff;
+  border: 1px solid #8fb0f1;
+  border-radius: 10px;
+  padding: 15px 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-right: 10px;
+  width: 100%;
+}
+.max-width {
+  max-width: 500px;
+  padding: 50px 50px;
+  box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.871);
+}
+.link {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  color: black;
+}
+span {
+  display: inline-block;
+}
+.active {
+  margin-bottom: -18px;
+}
+
+.bio-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.avatar {
+  max-width: 30px;
+}
+
+svg {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+.title {
+  font-weight: 600;
+}
+.pencil-btn {
+  background-color: black;
+  color: #fff;
+  width: 60px;
+  height: 60px;
+  padding: 15px 0px;
+  border-radius: 50%;
+}
+.rec-img {
+  max-width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  display: flex;
+}
+
+.modal {
+  margin-left: 50%;
+  transform: translateX(-50%);
+  border-radius: 5px;
+  padding: 20px;
+  max-width: 800px;
+}
+
+.modal-content {
+  color: #000000;
+}
+.mdclose {
+  position: absolute;
+  right: 0;
+  top: -40px;
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  color: #000000;
+  border-radius: 50%;
+}
+svg {
+  transform: translateX(20%);
+}
+.sign-in {
+  text-transform: capitalize;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #000;
+}
+.fgt {
+  font-weight: 600;
+  color: #000;
+}
+.name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #000;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  margin-right: 8px;
+}
+
+.bot {
+  cursor: pointer;
+}
+.bot:hover {
+  color: #8fb0f1;
+}
+.eye {
+  cursor: pointer;
+}
