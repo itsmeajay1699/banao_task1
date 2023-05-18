@@ -18,22 +18,26 @@ const Register = ({ show, showLg }) => {
   //  //http://localhost:3000/api/v1/auth/register
   const handleSubmit = () => {
     if (password === confirmPassword) {
-      axios
-        .post("https://banao-backend1.onrender.com/api/v1/auth/register", {
-          firstName,
-          lastName,
-          email,
-          password,
-        })
-        .then((res) => {
-          toast.success("Registered Successfully");
-          const user = JSON.stringify(res.data.user);
-          localStorage.setItem("user", user);
-          window.location.reload();
-        })
-        .catch((err) => {
-          toast.error(err.response.data.error);
-        });
+      try {
+        axios
+          .post("https://banao-backend1.onrender.com/api/v1/auth/register", {
+            firstName,
+            lastName,
+            email,
+            password,
+          })
+          .then((res) => {
+            toast.success("Registered Successfully");
+            const user = JSON.stringify(res.data.user);
+            localStorage.setItem("user", user);
+            window.location.reload();
+          })
+          .catch((err) => {
+            toast.error(err.response.data.error);
+          });
+      } catch (err) {
+        toast.error(err.response.data.error);
+      }
     } else {
       toast.error("Password not matched");
     }
@@ -52,10 +56,7 @@ const Register = ({ show, showLg }) => {
                 <div className="sign-in">Sign Up</div>
                 <div className="d-none d-md-block">
                   Already have an account?{" "}
-                  <span
-                    onClick={showLg}
-                    className="text-primary bot"
-                  >
+                  <span onClick={showLg} className="text-primary bot">
                     Sign In
                   </span>
                 </div>

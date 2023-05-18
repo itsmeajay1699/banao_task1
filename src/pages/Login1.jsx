@@ -11,20 +11,24 @@ const Login = ({ show, showReg }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const handleSubmit = () => {
-    axios
-      .post("https://banao-backend1.onrender.com/api/v1/auth/login", {
-        email,
-        password,
-      })
-      .then((res) => {
-        toast.success("Logged In Successfully");
-        const user = JSON.stringify(res.data.user);
-        localStorage.setItem("user", user);
-        window.location.reload();
-      })
-      .catch((err) => {
-        toast.error(err.response.data.error);
-      });
+    try {
+      axios
+        .post("https://banao-backend1.onrender.com/api/v1/auth/login", {
+          email,
+          password,
+        })
+        .then((res) => {
+          toast.success("Logged In Successfully");
+          const user = JSON.stringify(res.data.user);
+          localStorage.setItem("user", user);
+          window.location.reload();
+        })
+        .catch((err) => {
+          toast.error(err.response.data.error);
+        });
+    } catch (err) {
+      toast.error(err.response.data.error);
+    }
   };
 
   return (
